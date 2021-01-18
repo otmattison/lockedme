@@ -52,45 +52,42 @@ public class FileOp {
 		}
 
 	}
-	
+
 	public void deleteFile(String input) {
 		String deletePath = input;
 		File f = new File(deletePath);
 		try {
 			boolean fstatus = f.delete();
-			if(fstatus) {
+			if (fstatus) {
 				System.out.println("File is deleted");
-			}else {
+			} else {
 				System.out.println("Error file not deleted");
 			}
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println("Exception has occured");
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public String fileSearch(String directory, String fileName) {
 		String success = "";
 		String fName = fileName;
 		String folder = directory;
-		File  Folder= new File(directory);
+		File Folder = new File(directory);
 		File[] files = Folder.listFiles();
-		
+
 		for (File file : files) {
-			if(file.getName().equals(fName)) {
+			if (file.getName().equals(fName)) {
 				success = "file found";
 				break;
-			}
-			else {
+			} else {
 				success = "file not found";
 				break;
 			}
 		}
-		
-			
+
 		return success;
 	}
 
 }
-
