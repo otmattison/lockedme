@@ -24,6 +24,7 @@ public class FileOp {
 			}
 			list.add(file.getName());
 		}
+		Collections.sort(list);
 		list.forEach(System.out::println);
 		System.out.println("--------");
 
