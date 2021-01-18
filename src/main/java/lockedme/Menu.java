@@ -88,6 +88,10 @@ public class Menu {
 			break;
 		case "3":
 			//Search
+			//String fileName = input.nextLine();
+			String fileName = "alpha";
+			String success = op.fileSearch(Folder, fileName);
+			System.out.print(success + " congrats");
 			break;
 		case "4":
 			

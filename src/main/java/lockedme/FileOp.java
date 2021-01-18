@@ -69,5 +69,28 @@ public class FileOp {
 		}
 		
 	}
+	
+	public String fileSearch(String directory, String fileName) {
+		String success = "";
+		String fName = fileName;
+		String folder = directory;
+		File  Folder= new File(directory);
+		File[] files = Folder.listFiles();
+		
+		for (File file : files) {
+			if(file.getName().equals(fName)) {
+				success = "file found";
+				break;
+			}
+			else {
+				success = "file not found";
+				break;
+			}
+		}
+		
+			
+		return success;
+	}
 
 }
+
