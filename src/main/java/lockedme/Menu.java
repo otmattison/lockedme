@@ -4,6 +4,9 @@ import java.util.*;
 public class Menu {
 	String option = "";
 	Scanner input = new Scanner(System.in);
+	FileOp op = new FileOp();
+	
+	final public String Folder = "src/main/resources/appdirectory/";
 
 	public void showWelcome() {
 		System.out.println("--------------------------");
@@ -24,6 +27,9 @@ public class Menu {
 		System.out.println("3.) Close the application");
 		System.out.println("--------------------------");
 		System.out.println("\n" + "		Please choose 1, 2 or 3"+ "\n" );
+		
+		option = input.nextLine();
+		getMainIn(option);
 
 	}
 
@@ -35,17 +41,21 @@ public class Menu {
 		System.out.println("4.) Back to main menu");
 		System.out.println("--------------------------");
 		System.out.println("\n" + "		Please choose 1, 2 or 3"+ "\n" );
+		option = input.nextLine();
+		getFileIn(option);
 
 
 	}
 	public void getMainIn(String choice) {
 		switch(choice) {
 		case "1":
+			op.showFilesInAscendingOrder(Folder);
 			break;
+			
 		case "2":
 			showFileMenu();
-			option = input.nextLine();
-			getFileIn(option);
+			
+			
 		case "3":
 			System.out.println("Thank you for using lockedme.com." + "\n" + "Closing Application.");
 			System.exit(0);
@@ -69,12 +79,11 @@ public class Menu {
 		case "3":
 			break;
 		case "4":
-			showMenu();
-			option = input.nextLine();
-			getMainIn(option);
+			
 			break;
 			
 		}
+		showMenu();
 
 	}
 	
