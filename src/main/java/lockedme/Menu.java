@@ -7,6 +7,8 @@ public class Menu {
 	FileOp op = new FileOp();
 	
 	final public String Folder = "src/main/resources/appdirectory/";
+	final public String GetFolder = "src/main/resources/sampledirectory/sampledoc";
+
 
 	public void showWelcome() {
 		System.out.println("--------------------------");
@@ -73,10 +75,19 @@ public class Menu {
 	public void getFileIn(String choice) {
 		switch(choice) {
 		case "1":
+			/*System.out.println("Please provide a file path");
+			  String filePath = input.nextLine();*/
+			op.addFile(GetFolder, Folder);
 			break;
 		case "2":
+			//Delete
+			System.out.println("Enter the File you want to delete");
+			//String delete = input.nextLine();
+			String delete = "src/main/resources/appdirectory/sample";
+			op.deleteFile(delete);
 			break;
 		case "3":
+			//Search
 			break;
 		case "4":
 			
